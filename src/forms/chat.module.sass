@@ -1,0 +1,97 @@
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    
+.chatWrapper
+    background: url('https://images.ctfassets.net/hrltx12pl8hq/5KiKmVEsCQPMNrbOE6w0Ot/341c573752bf35cb969e21fcd279d3f9/hero-img_copy.jpg?fit=fill&w=800&h=300') center center/cover no-repeat
+    border-radius: 15px
+    max-width: 400px
+    height: 500px
+    overflow: scroll
+    border: 1px solid black
+    margin: 0 auto
+    display: flex
+    flex-direction: column
+    padding: 10px
+    color: rgb(255, 255, 255)
+    .user_info_wrapper
+        display: flex
+        flex-direction: column
+        align-items: center
+::-webkit-scrollbar
+        display: none
+article 
+    max-width:  250px
+    padding: 10px
+img
+    width: 40px
+    height: 40px
+    border-radius: 50%
+    cursor: pointer
+    
+.currentUser
+    background: rgba(33, 157, 214,.8)
+    margin-top: 20px
+    display: flex
+    border-radius: 15px
+    align-self: flex-end
+    &_wrapper
+        display: flex
+        flex-direction: column
+        padding:  0 10px
+        justify-content: space-around
+        span
+            font-size: 16px
+        p
+            font-size: 10px
+            margin-top: 5px
+
+.otherUsers
+    background: rgba(146, 146, 146,.8)
+    margin-top: 20px
+    display: flex
+    border-radius: 15px
+    .user_info_wrapper
+        span
+            text-transform: capitalize
+            text-decoration: underline
+            margin-top: 5px
+            cursor: pointer
+
+    &_wrapper
+        display: flex
+        flex-direction: column
+        padding:  0 10px
+        justify-content: space-between
+        width: 100%
+    
+        span
+            font-size: 16px
+            margin-left: 10px
+        p
+            font-size: 9px
+            align-self: flex-end
+            margin-top: 10px
+            
+
+form
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin-top: 10px
+    bottom: 0
+    input,textarea
+        padding: 10px
+        width: 400px
+        height: 30px
+    textarea
+        margin-top: 10px
+        height: 50px
+    label
+        display: flex
+        align-items: center
+        margin: 10px
+    input[type="checkbox"]
+        width: 20px
+        margin-left: 10px
