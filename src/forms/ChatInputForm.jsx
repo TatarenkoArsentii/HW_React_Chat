@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { sendMsg } from "../actions";
 import schema from "../validations/chatValidation";
 import styles from "./chat.module.sass";
+import { useLayoutEffect } from "react";
 
 function ChatInputForm(props) {
   const { sendMsgAction, usersAndMsgs } = props;
@@ -30,13 +31,21 @@ function ChatInputForm(props) {
     );
   });
 
+  const firstElem = usersAndMsgs[0];
+  useLayoutEffect(() => {
+    const div = document.getElementById("chat");
+    div.scrollTo(0, div.scrollHeight);
+  }, [usersAndMsgs.length, firstElem]);
+
   const onSubmitHendler = (value, formikBag) => {
     sendMsgAction(value);
     formikBag.resetForm();
   };
   return (
     <>
-      <div className={styles.chatWrapper}>{article}</div>
+      <div id="chat" className={styles.chatWrapper}>
+        {article}
+      </div>
       <Formik
         initialValues={initialUserValues}
         onSubmit={onSubmitHendler}
